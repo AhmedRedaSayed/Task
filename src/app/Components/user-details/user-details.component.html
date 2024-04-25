@@ -1,0 +1,35 @@
+@if(!isLoading)
+{
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <button class="btn btn-primary " (click)="goBack()">Back to User List</button>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img [src]="user?.avatar" class="img-fluid rounded" alt="User Avatar">
+              </div>
+              <div class="col-md-8">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>First Name:</strong> {{ user?.first_name }}</li>
+                  <li class="list-group-item"><strong>Last Name:</strong> {{ user?.last_name }}</li>
+                  <li class="list-group-item"><strong>Email:</strong> {{ user?.email }}</li>
+                  <li class="list-group-item"><strong>ID:</strong> {{ user?.id }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+@else{
+
+  <div class="spinner-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+}

@@ -1,0 +1,25 @@
+
+<nav class="navbar navbar-dark bg-light">
+  <div class="container d-flex justify-content-center">
+    <input class="form-control me-2 w-50 text-center" type="search" placeholder="Search User by ID" aria-label="Search"
+           (input)="searchUser($event)">
+  </div>
+
+
+    <div class="container mt-3 w-25 ">
+      @if (filteredUser) {
+        <ng-container >
+          <div  (click)="navigateToUserDetails(+filteredUser.id)">
+            <div class="user-details d-flex align-items-center justify-content-center ">
+              <img [src]="filteredUser.avatar" alt="User Avatar">
+              <h5 class="px-4">{{ filteredUser.first_name }} {{ filteredUser.last_name }}</h5>
+            </div>
+          </div>
+        </ng-container>
+      }
+
+
+    </div>
+
+
+</nav>
